@@ -1,6 +1,8 @@
 package arrays;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Given an array of integers, are there elements a, b, c in array such that a + b + c = 0?
@@ -27,7 +29,7 @@ public class ThreeSum {
 		Arrays.sort(inputArray);
 		List<List<Integer>> output = new ArrayList<>();
 		for(int i = 0; i<inputArray.length-2; i++ ){
-			if(inputArray[i] != inputArray[i+1]){
+			if(inputArray[i] != inputArray[i+1] || (inputArray[i] == inputArray[i+1] && i==inputArray.length-3)){
 			int lo = i+1;
 			int hi=inputArray.length-1;
 			while (lo<hi){
